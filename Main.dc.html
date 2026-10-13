@@ -1,0 +1,664 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>گزارش حوادث و سوانح دی‌ماه ۱۴۰۳</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+@font-face{font-family:"YekanBakh";src:url("./assets/d0551dab7954f32f6e889b278b17699c.woff2") format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"YekanBakh";src:url("./assets/940ae880308138a0c3b8d6fb3faccf5c.woff2") format("woff2");font-weight:700;font-display:swap}
+body{margin:0}
+.rasad{
+  --seismic-red:#d32f2f;--seismic-brown:oklch(0.5 0.11 47);--seismic-blue:oklch(0.52 0.17 262);
+  --bg:oklch(0.08 0 0);--fg:oklch(0.97 0.002 90);--muted:oklch(0.72 0.005 90);
+  --glass:oklch(1 0 0 / 0.045);--glass-strong:oklch(1 0 0 / 0.07);--glass-border:oklch(1 0 0 / 0.1);--glass-strong-border:oklch(1 0 0 / 0.14);
+  --border:oklch(1 0 0 / 10%);--hover:oklch(1 0 0 / 0.075);--pop:oklch(0.12 0.002 90);
+  --primary:#d32f2f;--primary-fg:oklch(0.99 0 0);--accent:oklch(0.6 0.16 262);
+  --atm-r:oklch(0.63 0.222 27.6 / 0.16);--atm-b:oklch(0.6 0.16 262 / 0.14);--atm-br:oklch(0.5 0.11 47 / 0.12);
+  --shadow:0 1px 0 oklch(1 0 0 / 0.06) inset,0 24px 60px -30px oklch(0 0 0 / 0.9);
+  --sev:oklch(0.74 0.17 27);
+  --hz-flood:oklch(0.64 0.16 250);--hz-snow:oklch(0.88 0.06 215);--hz-cold:oklch(0.72 0.14 300);--hz-fire:oklch(0.8 0.16 72);--hz-quake:oklch(0.63 0.21 27.6);
+  --hz-flood-ink:#fff;--hz-snow-ink:oklch(0.15 0.02 240);--hz-cold-ink:oklch(0.15 0.02 300);--hz-fire-ink:oklch(0.18 0.03 60);--hz-quake-ink:#fff;
+  --land:oklch(1 0 0 / 0.05);--land-line:oklch(1 0 0 / 0.2);
+  --lvl1:oklch(0.6 0.16 262 / 0.2);--lvl2:oklch(0.6 0.16 262 / 0.34);--lvl3:oklch(0.6 0.16 262 / 0.5);--lvl4:oklch(0.6 0.16 262 / 0.68);
+  font-family:"YekanBakh",system-ui,sans-serif;color:var(--fg);background-color:var(--bg);
+  background-image:radial-gradient(60rem 40rem at 85% -10%,var(--atm-r),transparent 60%),radial-gradient(55rem 38rem at 10% 5%,var(--atm-b),transparent 60%),radial-gradient(50rem 36rem at 50% 100%,var(--atm-br),transparent 60%);
+}
+.rasad.t-light{
+  --bg:oklch(0.97 0.012 90);--fg:oklch(0.18 0.018 45);--muted:oklch(0.46 0.02 45);
+  --glass:oklch(1 0 0 / 0.62);--glass-strong:oklch(1 0 0 / 0.8);--glass-border:oklch(0.18 0.018 45 / 12%);--glass-strong-border:oklch(0.18 0.018 45 / 18%);
+  --border:oklch(0.18 0.018 45 / 16%);--hover:oklch(1 0 0 / 0.9);--pop:oklch(0.99 0.006 90);
+  --primary:oklch(0.52 0.17 262);--accent:oklch(0.5 0.15 262);
+  --atm-r:oklch(0.63 0.222 27.6 / 0.1);--atm-b:oklch(0.6 0.16 262 / 0.09);--atm-br:oklch(0.5 0.11 47 / 0.08);
+  --shadow:0 1px 0 oklch(1 0 0 / 0.8) inset,0 24px 60px -30px oklch(0.18 0.018 45 / 0.16);
+  --sev:oklch(0.5 0.2 27);
+  --hz-flood:oklch(0.5 0.17 255);--hz-snow:oklch(0.62 0.09 215);--hz-cold:oklch(0.5 0.17 300);--hz-fire:oklch(0.66 0.16 62);--hz-quake:oklch(0.52 0.2 27.6);
+  --hz-snow-ink:#fff;--hz-cold-ink:#fff;--hz-fire-ink:oklch(0.16 0.03 60);
+  --land:oklch(0.18 0.018 45 / 0.05);--land-line:oklch(0.18 0.018 45 / 0.28);
+  --lvl1:oklch(0.52 0.17 262 / 0.14);--lvl2:oklch(0.52 0.17 262 / 0.26);--lvl3:oklch(0.52 0.17 262 / 0.4);--lvl4:oklch(0.52 0.17 262 / 0.56);
+}
+.rasad *{box-sizing:border-box}
+.rasad h1,.rasad h2,.rasad h3{text-wrap:balance}
+.rasad p,.rasad li{text-wrap:pretty}
+a{color:var(--fg);text-decoration:none}a:hover{color:var(--primary)}
+.rasad button{font-family:inherit;color:inherit}
+.rasad :focus-visible{outline:2px solid var(--primary);outline-offset:2px}
+.glass{background:var(--glass);border:1px solid var(--glass-border);backdrop-filter:blur(22px) saturate(150%);-webkit-backdrop-filter:blur(22px) saturate(150%);box-shadow:var(--shadow)}
+.glass-strong{background:var(--glass-strong);border:1px solid var(--glass-strong-border);backdrop-filter:blur(30px) saturate(170%);-webkit-backdrop-filter:blur(30px) saturate(170%);box-shadow:var(--shadow)}
+.seismic-rule{background-image:linear-gradient(90deg,var(--seismic-red) 0 33.33%,var(--seismic-brown) 33.33% 66.66%,var(--seismic-blue) 66.66% 100%)}
+.nav-link{padding:8px 14px;border-radius:999px;color:var(--muted)}
+.nav-link:hover{background:var(--hover);color:var(--fg)}
+.nav-link.on{color:var(--fg);background:var(--glass-strong);box-shadow:inset 0 0 0 1px var(--glass-strong-border)}
+.icon-btn{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:999px;border:1px solid var(--glass-strong-border);background:var(--glass);color:var(--primary);cursor:pointer}
+.icon-btn:hover{background:var(--hover)}
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:999px;font-weight:700;cursor:pointer;border:1px solid transparent}
+.btn-primary{background:var(--primary);color:var(--primary-fg)}
+.btn-primary:hover{color:var(--primary-fg);filter:brightness(1.08)}
+.btn-ghost{background:var(--glass);border-color:var(--glass-strong-border);color:var(--fg)}
+.btn-ghost:hover{background:var(--hover);color:var(--fg)}
+.chip{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 14px 0 16px;border-radius:999px;border:1px solid var(--glass-strong-border);background:var(--glass);cursor:pointer;font-size:14px;color:var(--muted)}
+.chip .dot{width:10px;height:10px;border-radius:50%;background:var(--muted);opacity:.5}
+.chip .num{font-weight:700;color:var(--fg);opacity:.7}
+.chip.on{color:var(--fg);background:var(--glass-strong)}
+.chip.on .dot{opacity:1}
+.chip.on .num{opacity:1}
+.chip:hover{background:var(--hover)}
+.hz-flood{--hz:var(--hz-flood);--hz-ink:var(--hz-flood-ink)}
+.hz-snow{--hz:var(--hz-snow);--hz-ink:var(--hz-snow-ink)}
+.hz-cold{--hz:var(--hz-cold);--hz-ink:var(--hz-cold-ink)}
+.hz-fire{--hz:var(--hz-fire);--hz-ink:var(--hz-fire-ink)}
+.hz-quake{--hz:var(--hz-quake);--hz-ink:var(--hz-quake-ink)}
+.chip.on .dot,.hz-swatch{background:var(--hz)}
+.hz-text{color:var(--hz)}
+.hz-badge{display:inline-flex;align-items:center;justify-content:center;flex:none;border-radius:12px;background:color-mix(in oklch,var(--hz) 18%,transparent);color:var(--hz);box-shadow:inset 0 0 0 1px color-mix(in oklch,var(--hz) 40%,transparent)}
+.map-wrap{position:relative;width:100%;aspect-ratio:1024/928}
+.map-layer{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible}
+.prov{fill:var(--land);stroke:var(--land-line);stroke-width:1;pointer-events:auto;cursor:pointer;transition:fill .15s}
+.prov.lvl-1{fill:var(--lvl1)}.prov.lvl-2{fill:var(--lvl2)}.prov.lvl-3{fill:var(--lvl3)}.prov.lvl-4{fill:var(--lvl4)}
+.prov.hov{stroke:var(--fg);stroke-width:1.6}
+.prov.hl{fill:color-mix(in oklch,var(--primary) 34%,transparent);stroke:var(--primary);stroke-width:1.6}
+.prov.sel{stroke:var(--fg);stroke-width:2.6}
+.mk{position:absolute;transform:translate(-50%,-50%);display:inline-flex;align-items:center;justify-content:center;border-radius:50%;border:2px solid var(--bg);background:var(--hz);color:var(--hz-ink);font-weight:700;font-size:12px;line-height:1;cursor:pointer;padding:0;box-shadow:0 2px 10px oklch(0 0 0 / .35);transition:transform .15s}
+.mk:hover{transform:translate(-50%,-50%) scale(1.15);z-index:3}
+.mk.is-sel{z-index:4;transform:translate(-50%,-50%) scale(1.2);box-shadow:0 0 0 3px var(--bg),0 0 0 6px var(--hz)}
+.mk.is-dim{opacity:.35}
+.plabel{position:absolute;transform:translate(-50%,-50%);font-size:11px;white-space:nowrap;color:var(--fg);opacity:.8;pointer-events:none;text-shadow:0 0 3px var(--bg),0 0 3px var(--bg)}
+.tl-dot{width:22px;height:22px;border-radius:50%;border:2px solid var(--bg);background:var(--hz);color:var(--hz-ink);font-size:10px;font-weight:700;padding:0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center}
+.tl-dot.is-sel{box-shadow:0 0 0 2px var(--hz)}
+.tl-dot.is-dim{opacity:.3}
+.row-btn{display:flex;gap:14px;align-items:flex-start;width:100%;text-align:right;background:transparent;border:0;border-radius:14px;padding:14px;cursor:pointer;min-height:44px}
+.row-btn:hover{background:var(--hover)}
+.row-btn.is-sel{background:var(--glass-strong);box-shadow:inset 0 0 0 1px var(--glass-strong-border)}
+.num-badge{flex:none;width:32px;height:32px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;background:var(--hz);color:var(--hz-ink)}
+.meta{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--muted);padding:2px 10px;border-radius:999px;background:var(--glass);border:1px solid var(--glass-border)}
+.meta.sev{color:var(--sev);border-color:color-mix(in oklch,var(--sev) 40%,transparent);font-weight:700}
+.tab-link{padding:10px 16px;border-radius:999px;color:var(--muted);min-height:44px;display:inline-flex;align-items:center}
+.tab-link:hover{background:var(--hover);color:var(--fg)}
+.bar{height:8px;border-radius:999px;background:var(--hz)}
+.foot-link{color:var(--muted)}.foot-link:hover{color:var(--fg)}
+@media (max-width:860px){.nav-links{display:none !important}.hide-sm{display:none !important}}
+</style>
+</helmet>
+<div class="rasad {{themeCls}}" style="min-height: 100vh; display: flex; flex-direction: column; line-height: 1.75">
+<div class="seismic-rule" style="height: 3px; width: 100%"></div>
+
+<header style="padding: 12px 16px 0">
+<div class="glass-strong" style="max-width: 1280px; margin: 0 auto; border-radius: 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 10px 16px; min-height: 72px">
+<a href="/" style="display: flex; align-items: center; gap: 12px">
+<span style="display: flex; width: 48px; height: 48px; border-radius: 999px; align-items: center; justify-content: center; background: var(--glass); box-shadow: 0 0 0 1px var(--glass-border)"><img src="./assets/2dcd45158a206faf6d74c84af4410999.png" alt="" style="width: 40px; height: 40px; object-fit: contain"></span>
+<span style="font-weight: 700; font-size: 18px; letter-spacing: -0.01em; white-space: nowrap">رصدخانه حوادث و سوانح</span>
+</a>
+<nav class="nav-links" aria-label="منوی اصلی" style="display: flex; align-items: center; gap: 4px; margin-inline-start: auto; font-size: 15px">
+<a class="nav-link" href="/">سرخط خبرها</a>
+<a class="nav-link" href="/map/">نقشه پایش</a>
+<a class="nav-link" href="/events/">رویدادها</a>
+<a class="nav-link on" href="/reports/" aria-current="page">گزارش‌ها</a>
+<a class="nav-link" href="/about/">درباره ما</a>
+</nav>
+<button class="icon-btn" type="button" aria-label="{{themeLabel}}" onClick="{{toggleTheme}}">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg>
+</button>
+</div>
+</header>
+
+<main style="flex: 1; width: 100%; max-width: 1280px; margin: 0 auto; padding: 24px 16px 64px; display: flex; flex-direction: column; gap: 40px">
+
+<nav aria-label="مسیر صفحه" style="font-size: 14px; color: var(--muted); display: flex; gap: 8px; flex-wrap: wrap">
+<a href="/" style="color: var(--muted)">خانه</a><span aria-hidden="true">‹</span>
+<a href="/reports/" style="color: var(--muted)">گزارش‌ها</a><span aria-hidden="true">‹</span>
+<span style="color: var(--fg)">گزارش دی‌ماه ۱۴۰۳</span>
+</nav>
+
+<section style="display: flex; flex-wrap: wrap; gap: 24px; align-items: stretch">
+<div style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 16px; justify-content: center">
+<div style="display: flex; gap: 8px; flex-wrap: wrap; font-size: 14px">
+<span class="meta" style="color: var(--fg)">گزارش ماهانه</span>
+<span class="meta">نسخه ۰۱</span>
+<span class="meta">بازه: ۱ تا ۳۰ دی ۱۴۰۳</span>
+</div>
+<h1 style="margin: 0; font-size: clamp(32px, 5vw, 56px); line-height: 1.25; font-weight: 700; letter-spacing: -0.02em">گزارش حوادث و سوانح دی‌ماه ۱۴۰۳</h1>
+<p style="margin: 0; font-size: 18px; color: var(--muted); max-width: 680px">تصویری از ۲۵ رخداد ثبت‌شده در کشور، از سیلاب میناب تا زلزله‌های جم. روی نقشه هر رخداد را ببینید، بر اساس نوع مخاطره جدا کنید و جزئیات هر استان را بخوانید.</p>
+<div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px">
+<a class="btn btn-primary" href="#map">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2z"></path><path d="M9 4v14M15 6v14"></path></svg>
+نقشه رخدادها</a>
+<a class="btn btn-ghost" href="#download">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M4 21h16"></path></svg>
+دریافت نسخه PDF</a>
+</div>
+</div>
+<aside class="glass" style="flex: 1 1 320px; border-radius: 24px; padding: 24px; display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; align-items: center; gap: 12px">
+<img src="./assets/2dcd45158a206faf6d74c84af4410999.png" alt="نشان پژوهشکده سوانح طبیعی" style="width: 56px; height: 56px; object-fit: contain">
+<div style="line-height: 1.5">
+<div style="font-weight: 700">پژوهشکده سوانح طبیعی</div>
+<div style="font-size: 14px; color: var(--muted)">معاونت پژوهشی</div>
+</div>
+</div>
+<p style="margin: 0; font-size: 15px; color: var(--muted)">تهیه‌شده در مرکز مدیریت اطلاعات و مستندسازی حوادث و سوانح</p>
+<div style="height: 1px; background: var(--border)"></div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; font-size: 14px">
+<div><div style="color: var(--muted)">بازه زمانی</div><div style="font-weight: 700">۱ تا ۳۰ دی ۱۴۰۳</div></div>
+<div><div style="color: var(--muted)">نسخه</div><div style="font-weight: 700">۰۱</div></div>
+<div><div style="color: var(--muted)">پوشش</div><div style="font-weight: 700">سراسر کشور</div></div>
+<div><div style="color: var(--muted)">منبع زلزله‌ها</div><div style="font-weight: 700">مؤسسه ژئوفیزیک</div></div>
+</div>
+</aside>
+</section>
+
+<section aria-label="آمار کلی" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 16px">
+<div class="glass" style="border-radius: 20px; padding: 20px; display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 14px; color: var(--muted)">رخداد ثبت‌شده</span>
+<span style="font-size: 40px; font-weight: 700; line-height: 1.2">۲۵</span>
+<span style="font-size: 13px; color: var(--muted)">در ۵ نوع مخاطره</span>
+</div>
+<div class="glass" style="border-radius: 20px; padding: 20px; display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 14px; color: var(--muted)">استان درگیر</span>
+<span style="font-size: 40px; font-weight: 700; line-height: 1.2">۲۷</span>
+<span style="font-size: 13px; color: var(--muted)">از ۳۱ استان کشور</span>
+</div>
+<div class="glass" style="border-radius: 20px; padding: 20px; display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 14px; color: var(--muted)">جان‌باخته</span>
+<span style="font-size: 40px; font-weight: 700; line-height: 1.2; color: var(--sev)">۶ نفر</span>
+<span style="font-size: 13px; color: var(--muted)">آتش‌سوزی و سرمازدگی</span>
+</div>
+<div class="glass" style="border-radius: 20px; padding: 20px; display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 14px; color: var(--muted)">مصدوم</span>
+<span style="font-size: 40px; font-weight: 700; line-height: 1.2">۱۵ نفر</span>
+<span style="font-size: 13px; color: var(--muted)">در ۴ آتش‌سوزی</span>
+</div>
+<div class="glass" style="border-radius: 20px; padding: 20px; display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 14px; color: var(--muted)">بزرگ‌ترین زلزله</span>
+<span style="font-size: 40px; font-weight: 700; line-height: 1.2">۵٫۲</span>
+<span style="font-size: 13px; color: var(--muted)">جم، استان بوشهر (۱۷ دی)</span>
+</div>
+</section>
+
+<nav aria-label="بخش‌های گزارش" class="glass" style="border-radius: 999px; padding: 6px; display: flex; gap: 4px; flex-wrap: wrap; align-self: flex-start; font-size: 15px">
+<a class="tab-link" href="#map">نقشه تعاملی</a>
+<a class="tab-link" href="#timeline">گاه‌شمار</a>
+<a class="tab-link" href="#list">فهرست رخدادها</a>
+<a class="tab-link" href="#quakes">رومرکز زلزله‌ها</a>
+<a class="tab-link" href="#about">درباره گزارش</a>
+</nav>
+
+<section id="map" style="display: flex; flex-direction: column; gap: 16px; scroll-margin-top: 24px">
+<div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; flex-wrap: wrap">
+<div>
+<h2 style="margin: 0; font-size: 28px; font-weight: 700">نقشه رخدادهای دی ۱۴۰۳</h2>
+<p style="margin: 4px 0 0; color: var(--muted); font-size: 15px">رنگ هر استان تعداد رخدادهای آن را نشان می‌دهد. روی یک نشانه یا یک استان بزنید.</p>
+</div>
+<button class="chip {{labelsCls}}" type="button" aria-pressed="{{labelsPressed}}" onClick="{{toggleLabels}}">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7V4h16v3M9 20h6M12 4v16"></path></svg>
+نام استان‌ها</button>
+</div>
+
+<div role="group" aria-label="نوع مخاطره" style="display: flex; gap: 8px; flex-wrap: wrap">
+<button class="chip {{allCls}}" type="button" aria-pressed="{{allPressed}}" onClick="{{showAll}}">همه مخاطره‌ها <span class="num">۲۵</span></button>
+<sc-for list="{{chips}}" as="c" hint-placeholder-count="5">
+<button class="{{c.cls}}" type="button" aria-pressed="{{c.pressed}}" onClick="{{c.toggle}}">
+<span class="dot" aria-hidden="true"></span>
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{c.icon}}"></path></svg>
+{{c.label}} <span class="num">{{c.count}}</span>
+</button>
+</sc-for>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: stretch">
+<div class="glass" style="flex: 999 1 600px; min-width: 0; border-radius: 24px; padding: 16px; display: flex; flex-direction: column; gap: 12px">
+<div class="map-wrap">
+<sc-if value="{{loading}}" hint-placeholder-val="{{ false }}">
+<div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: var(--muted)">{{loadingText}}</div>
+</sc-if>
+<sc-for list="{{provs}}" as="p" hint-placeholder-count="0">
+<svg class="map-layer" viewBox="{{p.vb}}" aria-hidden="true"><path class="{{p.cls}}" d="{{p.d}}" onClick="{{p.pick}}" onMouseEnter="{{p.enter}}" onMouseLeave="{{p.leave}}"></path></svg>
+</sc-for>
+<sc-if value="{{showLabels}}" hint-placeholder-val="{{ false }}">
+<sc-for list="{{plabels}}" as="l" hint-placeholder-count="0">
+<span class="plabel" style="left: {{l.x}}%; top: {{l.y}}%">{{l.name}}</span>
+</sc-for>
+</sc-if>
+<sc-for list="{{marks}}" as="m" hint-placeholder-count="0">
+<button class="{{m.cls}}" type="button" style="left: {{m.x}}%; top: {{m.y}}%; width: {{m.s}}px; height: {{m.s}}px" aria-label="{{m.aria}}" title="{{m.aria}}" onClick="{{m.pick}}">{{m.label}}</button>
+</sc-for>
+<sc-if value="{{hoverOn}}" hint-placeholder-val="{{ false }}">
+<div class="glass-strong" style="position: absolute; top: 8px; left: 8px; border-radius: 14px; padding: 8px 14px; font-size: 14px; pointer-events: none">
+<div style="font-weight: 700">استان {{hoverName}}</div>
+<div style="color: var(--muted)">{{hoverCount}}</div>
+</div>
+</sc-if>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px 20px; align-items: center; justify-content: space-between; font-size: 13px; color: var(--muted)">
+<div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap">
+<span>تعداد رخداد در استان:</span>
+<span style="display: inline-flex; align-items: center; gap: 4px"><span style="width: 18px; height: 12px; border-radius: 3px; background: var(--land); box-shadow: inset 0 0 0 1px var(--land-line)"></span>۰</span>
+<span style="display: inline-flex; align-items: center; gap: 4px"><span style="width: 18px; height: 12px; border-radius: 3px; background: var(--lvl1)"></span>۱</span>
+<span style="display: inline-flex; align-items: center; gap: 4px"><span style="width: 18px; height: 12px; border-radius: 3px; background: var(--lvl2)"></span>۲</span>
+<span style="display: inline-flex; align-items: center; gap: 4px"><span style="width: 18px; height: 12px; border-radius: 3px; background: var(--lvl3)"></span>۳</span>
+<span style="display: inline-flex; align-items: center; gap: 4px"><span style="width: 18px; height: 12px; border-radius: 3px; background: var(--lvl4)"></span>۴ و بیشتر</span>
+</div>
+<span>نشانه‌ها مکان تقریبی شهرستان یا مرکز استان را نشان می‌دهند. اندازه نشانه زلزله به بزرگای آن بستگی دارد.</span>
+</div>
+</div>
+
+<aside class="glass" aria-live="polite" style="flex: 1 1 320px; border-radius: 24px; padding: 20px; display: flex; flex-direction: column; gap: 16px; min-width: 0">
+<sc-if value="{{showIdle}}" hint-placeholder-val="{{ true }}">
+<div style="display: flex; flex-direction: column; gap: 16px">
+<h3 style="margin: 0; font-size: 20px; font-weight: 700">رخدادها به تفکیک مخاطره</h3>
+<sc-for list="{{bars}}" as="b" hint-placeholder-count="5">
+<div class="{{b.cls}}" style="display: flex; flex-direction: column; gap: 6px">
+<div style="display: flex; justify-content: space-between; font-size: 15px"><span>{{b.label}}</span><span style="font-weight: 700">{{b.count}}</span></div>
+<div style="height: 8px; border-radius: 999px; background: var(--glass-strong)"><div class="bar" style="width: {{b.w}}%"></div></div>
+</div>
+</sc-for>
+<div style="height: 1px; background: var(--border)"></div>
+<p style="margin: 0; font-size: 14px; color: var(--muted)">روی یک نشانه بزنید تا جزئیات آن رخداد را ببینید، یا یک استان را انتخاب کنید تا همه رخدادهای آن فهرست شود.</p>
+</div>
+</sc-if>
+
+<sc-if value="{{showEvent}}" hint-placeholder-val="{{ false }}">
+<div class="{{ev.cls}}" style="display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 8px">
+<span class="meta">رخداد شماره {{ev.num}}</span>
+<button class="icon-btn" type="button" aria-label="بستن جزئیات" onClick="{{clear}}" style="color: var(--fg)">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg>
+</button>
+</div>
+<div style="display: flex; gap: 12px; align-items: center">
+<span class="hz-badge" style="width: 48px; height: 48px"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{ev.icon}}"></path></svg></span>
+<div style="line-height: 1.5">
+<div class="hz-text" style="font-size: 14px; font-weight: 700">{{ev.hzLabel}}</div>
+<h3 style="margin: 0; font-size: 20px; font-weight: 700">{{ev.kind}}</h3>
+</div>
+</div>
+<dl style="margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 10px 16px; font-size: 15px">
+<dt style="color: var(--muted)">{{ev.provTitle}}</dt><dd style="margin: 0; font-weight: 700">{{ev.provNames}}</dd>
+<dt style="color: var(--muted)">محدوده</dt><dd style="margin: 0">{{ev.place}}</dd>
+<dt style="color: var(--muted)">تاریخ</dt><dd style="margin: 0">{{ev.date}}</dd>
+<dt style="color: var(--muted)">پیامد</dt><dd style="margin: 0"><span class="{{ev.impactCls}}">{{ev.impact}}</span></dd>
+</dl>
+<sc-if value="{{ev.isMulti}}" hint-placeholder-val="{{ false }}">
+<p style="margin: 0; font-size: 14px; color: var(--muted)">این رخداد چند استانی است. استان‌های درگیر روی نقشه پررنگ شده‌اند.</p>
+</sc-if>
+</div>
+</sc-if>
+
+<sc-if value="{{showProv}}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 8px">
+<div style="line-height: 1.5">
+<div style="font-size: 14px; color: var(--muted)">استان</div>
+<h3 style="margin: 0; font-size: 22px; font-weight: 700">{{pv.name}}</h3>
+</div>
+<button class="icon-btn" type="button" aria-label="بستن استان" onClick="{{clear}}" style="color: var(--fg)">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg>
+</button>
+</div>
+<span class="meta" style="align-self: flex-start">{{pv.countLabel}}</span>
+<sc-if value="{{pv.none}}" hint-placeholder-val="{{ false }}">
+<p style="margin: 0; color: var(--muted); font-size: 15px">در دی‌ماه ۱۴۰۳ رخدادی از این استان در گزارش نیامده است، یا نوع مخاطره آن در فیلتر خاموش است.</p>
+</sc-if>
+<div style="display: flex; flex-direction: column; gap: 4px; margin: 0 -8px">
+<sc-for list="{{pv.items}}" as="it" hint-placeholder-count="2">
+<button class="row-btn {{it.hzCls}}" type="button" onClick="{{it.pick}}">
+<span class="num-badge">{{it.num}}</span>
+<span style="display: flex; flex-direction: column; gap: 2px; line-height: 1.6">
+<span style="font-weight: 700; font-size: 15px">{{it.kind}}</span>
+<span style="font-size: 13px; color: var(--muted)">{{it.date}} · {{it.impact}}</span>
+</span>
+</button>
+</sc-for>
+</div>
+</div>
+</sc-if>
+</aside>
+</div>
+</section>
+
+<section id="timeline" class="glass" style="border-radius: 24px; padding: 20px; display: flex; flex-direction: column; gap: 12px; scroll-margin-top: 24px">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap">
+<h2 style="margin: 0; font-size: 22px; font-weight: 700">گاه‌شمار دی‌ماه</h2>
+<span style="font-size: 14px; color: var(--muted)">هر نقطه یک رخداد است و در روز آغاز آن آمده است.</span>
+</div>
+<div style="overflow-x: auto; padding-bottom: 4px">
+<div style="min-width: 760px; display: grid; grid-template-columns: repeat(30, minmax(0, 1fr)); gap: 2px">
+<sc-for list="{{days}}" as="d" hint-placeholder-count="30">
+<div style="display: flex; flex-direction: column; align-items: center; gap: 4px">
+<div style="min-height: 104px; width: 100%; display: flex; flex-direction: column-reverse; align-items: center; gap: 4px; border-bottom: 1px solid var(--border); padding-bottom: 6px">
+<sc-for list="{{d.dots}}" as="t" hint-placeholder-count="0">
+<button class="{{t.cls}}" type="button" aria-label="{{t.aria}}" title="{{t.aria}}" onClick="{{t.pick}}">{{t.label}}</button>
+</sc-for>
+</div>
+<span style="font-size: 12px; color: var(--muted); min-height: 18px">{{d.label}}</span>
+</div>
+</sc-for>
+</div>
+</div>
+</section>
+
+<section id="list" style="display: flex; flex-direction: column; gap: 20px; scroll-margin-top: 24px">
+<div>
+<h2 style="margin: 0; font-size: 28px; font-weight: 700">فهرست رخدادها</h2>
+<p style="margin: 4px 0 0; color: var(--muted); font-size: 15px">همان ۲۵ مورد گزارش، به ترتیب نوع مخاطره. با زدن هر ردیف، رخداد روی نقشه نشان داده می‌شود.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 540px), 1fr)); gap: 16px; align-items: start">
+<sc-for list="{{sections}}" as="s" hint-placeholder-count="5">
+<article class="glass {{s.hzCls}}" style="border-radius: 24px; padding: 8px; display: flex; flex-direction: column">
+<header style="display: flex; align-items: center; gap: 12px; padding: 12px 12px 8px">
+<span class="hz-badge" style="width: 44px; height: 44px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{s.icon}}"></path></svg></span>
+<h3 style="margin: 0; font-size: 20px; font-weight: 700; flex: 1">{{s.title}}</h3>
+<span class="meta">{{s.count}}</span>
+</header>
+<ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column">
+<sc-for list="{{s.items}}" as="it" hint-placeholder-count="3">
+<li>
+<a class="row-btn {{it.selCls}}" href="#map" onClick="{{it.pick}}" style="color: var(--fg)">
+<span class="num-badge">{{it.num}}</span>
+<span style="display: flex; flex-direction: column; gap: 6px; line-height: 1.7; min-width: 0">
+<span style="font-weight: 700; font-size: 16px">{{it.kind}} · {{it.provLabel}}</span>
+<span style="font-size: 14px; color: var(--muted)">{{it.place}}</span>
+<span style="display: flex; gap: 6px; flex-wrap: wrap">
+<span class="meta">{{it.date}}</span>
+<span class="{{it.impactCls}}">{{it.impact}}</span>
+</span>
+</span>
+</a>
+</li>
+</sc-for>
+</ol>
+</article>
+</sc-for>
+</div>
+</section>
+
+<section id="quakes" style="display: flex; flex-wrap: wrap; gap: 24px; align-items: center; scroll-margin-top: 24px">
+<div style="flex: 1 1 320px; display: flex; flex-direction: column; gap: 12px">
+<h2 style="margin: 0; font-size: 28px; font-weight: 700">نقشه رومرکز زلزله‌های دی ۱۴۰۳</h2>
+<p style="margin: 0; color: var(--muted); font-size: 16px">همه زمین‌لرزه‌های ثبت‌شده در دی‌ماه، از بزرگای کمتر از ۳ تا بین ۵ و ۶، همراه با گسل‌های اصلی کشور. هفت زلزله‌ای که در فهرست بالا آمده‌اند آن‌هایی هستند که بزرگای ۴٫۵ یا بیشتر داشتند.</p>
+<div style="display: flex; flex-direction: column; gap: 8px; font-size: 15px">
+<div style="display: flex; align-items: center; gap: 10px"><span style="width: 12px; height: 12px; border-radius: 50%; background: #f4e842; box-shadow: 0 0 0 1px oklch(0 0 0 / .3)"></span>کمتر از ۳</div>
+<div style="display: flex; align-items: center; gap: 10px"><span style="width: 16px; height: 16px; border-radius: 50%; background: #f5a623; box-shadow: 0 0 0 1px oklch(0 0 0 / .3)"></span>بین ۳ تا ۴</div>
+<div style="display: flex; align-items: center; gap: 10px"><span style="width: 20px; height: 20px; border-radius: 50%; background: #f07c7c; box-shadow: 0 0 0 1px oklch(0 0 0 / .3)"></span>بین ۴ تا ۵</div>
+<div style="display: flex; align-items: center; gap: 10px"><span style="width: 24px; height: 24px; border-radius: 50%; background: #e00000; box-shadow: 0 0 0 1px oklch(0 0 0 / .3)"></span>بین ۵ تا ۶</div>
+</div>
+<p style="margin: 0; font-size: 13px; color: var(--muted)">منبع: مؤسسه ژئوفیزیک دانشگاه تهران، مرکز لرزه‌نگاری کشوری</p>
+</div>
+<figure class="glass" style="flex: 999 1 560px; min-width: 0; margin: 0; border-radius: 24px; padding: 12px">
+<img src="./assets/0f1558d84fda9a8ab40106eb14a1be2d.jpg" alt="نقشه ایران با رومرکز زلزله‌های دی ۱۴۰۳ که بیشترشان در رشته‌کوه زاگرس، البرز و شرق کشور هستند و بزرگ‌ترین آن‌ها در جنوب استان بوشهر" style="width: 100%; height: auto; display: block; border-radius: 16px">
+</figure>
+</section>
+
+<section id="about" style="display: flex; flex-wrap: wrap; gap: 16px; align-items: stretch; scroll-margin-top: 24px">
+<div class="glass" style="flex: 1 1 340px; border-radius: 24px; padding: 24px; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; align-items: center; gap: 12px">
+<span class="hz-badge" style="width: 44px; height: 44px; color: var(--primary); background: var(--glass-strong); box-shadow: inset 0 0 0 1px var(--glass-strong-border)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="5"></circle><circle cx="12" cy="12" r="1"></circle></svg></span>
+<h2 style="margin: 0; font-size: 22px; font-weight: 700">هدف</h2>
+</div>
+<p style="margin: 0; font-size: 16px">این گزارش با هدف اطلاع‌رسانی و آگاهی‌بخشی به مدیران، تصمیم‌گیران، فعالان و پژوهشگران حوزه مدیریت حوادث و سوانح ارائه شده است. گزارش حاضر تصویر حوادث و سوانحی است که در بازه زمانی ۱ تا ۳۰ دی‌ماه ۱۴۰۳ در کشور رخ داده‌اند.</p>
+</div>
+<div class="glass" style="flex: 999 1 520px; border-radius: 24px; padding: 24px; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; align-items: center; gap: 12px">
+<span class="hz-badge" style="width: 44px; height: 44px; color: var(--primary); background: var(--glass-strong); box-shadow: inset 0 0 0 1px var(--glass-strong-border)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h18v12H3zM8 20h8M12 16v4M7 12l3-3 3 2 4-4"></path></svg></span>
+<h2 style="margin: 0; font-size: 22px; font-weight: 700">سیمای کلی</h2>
+</div>
+<ul style="margin: 0; padding-inline-start: 20px; display: flex; flex-direction: column; gap: 10px; font-size: 15px">
+<li>در این گزارش، حوادث و سوانح منطبق با مخاطرات شناخته‌شده در سند راهبرد ملی مدیریت بحران (مصوب سال ۱۴۰۰ شورای عالی مدیریت بحران کشور) درج شده‌اند.</li>
+<li>حوادث و سوانح دارای آسیب جانی (جان‌باخته و مصدوم)، خسارات اقتصادی و اثرات اجتماعی در این گزارش بر اساس الگوی «نام حادثه استان؛ شهرستان: تاریخ، خسارت» ارائه شده است.</li>
+<li>حوادث و سوانح «بدون اعلام خسارت» به معنای عدم اعلام آمار و اطلاعات رسمی از سوی سازمان‌ها و دستگاه‌های مسئول در قانون مدیریت بحران کشور است و به معنای نداشتن خسارت نیست.</li>
+<li>این گزارش نسخه ۰۱ است و بر اساس اطلاعات در دسترس تهیه شده است. اگر اطلاعات به‌روزشده‌ای از سوی سازمان‌ها و دستگاه‌های مسئول برسد، در نسخه‌های بعدی اعمال می‌شود.</li>
+<li>نقشه رومرکز زلزله‌های ثبت‌شده در دی ۱۴۰۳ مطابق با گزارش مؤسسه ژئوفیزیک دانشگاه تهران ارائه شده است.</li>
+</ul>
+</div>
+</section>
+
+<section id="download" class="glass-strong" style="border-radius: 24px; padding: 24px; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between; scroll-margin-top: 24px">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<h2 style="margin: 0; font-size: 20px; font-weight: 700">نسخه کامل گزارش</h2>
+<p style="margin: 0; color: var(--muted); font-size: 15px">برای پرسش یا اصلاح اطلاعات با مرکز مدیریت اطلاعات و مستندسازی حوادث و سوانح در تماس باشید.</p>
+</div>
+<div style="display: flex; gap: 12px; flex-wrap: wrap">
+<a class="btn btn-primary" href="[PDF_URL]">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M4 21h16"></path></svg>
+دریافت PDF گزارش</a>
+<a class="btn btn-ghost" href="mailto:Dimc@ndri.ac.ir" dir="ltr">Dimc@ndri.ac.ir</a>
+</div>
+</section>
+</main>
+
+<footer style="padding: 0 16px 16px">
+<div class="glass" style="max-width: 1280px; margin: 0 auto; border-radius: 24px; padding: 32px 24px; display: flex; flex-wrap: wrap; gap: 24px 48px; justify-content: space-between">
+<div style="display: flex; flex-direction: column; gap: 10px; flex: 1 1 280px">
+<div style="display: flex; align-items: center; gap: 12px">
+<img src="./assets/2dcd45158a206faf6d74c84af4410999.png" alt="" style="width: 40px; height: 40px; object-fit: contain">
+<span style="font-weight: 700; font-size: 17px">رصدخانه حوادث و سوانح</span>
+</div>
+<p style="margin: 0; color: var(--muted); font-size: 14px">پژوهشکده سوانح طبیعی، معاونت پژوهشی، مرکز مدیریت اطلاعات و مستندسازی حوادث و سوانح</p>
+</div>
+<nav aria-label="پیوندهای پایین صفحه" style="display: flex; flex-direction: column; gap: 6px; font-size: 14px">
+<a class="foot-link" href="/">سرخط خبرها</a>
+<a class="foot-link" href="/map/">نقشه پایش</a>
+<a class="foot-link" href="/events/">رویدادها</a>
+<a class="foot-link" href="/about/">درباره ما</a>
+</nav>
+<div style="display: flex; flex-direction: column; gap: 6px; font-size: 14px">
+<a class="foot-link" href="https://ndri.ac.ir" dir="ltr" style="text-align: right">Ndri.ac.ir</a>
+<a class="foot-link" href="mailto:Dimc@ndri.ac.ir" dir="ltr" style="text-align: right">Dimc@ndri.ac.ir</a>
+<a class="foot-link" href="tel:02144974078" dir="ltr" style="text-align: right">021-44974078</a>
+</div>
+</div>
+<div class="seismic-rule" style="height: 3px; max-width: 1280px; margin: 16px auto 0; border-radius: 999px; opacity: .8"></div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"theme":{"editor":"enum","options":["dark","light"],"default":"dark"},"$preview":{"width":1440,"height":4300}}'>
+var FA_D = '۰۱۲۳۴۵۶۷۸۹';
+function fa(v) { return String(v).replace(/\d/g, function (d) { return FA_D[d]; }).replace(/\./g, '٫'); }
+
+var HZ = {
+  flood: { label: 'سیلاب', icon: 'M3 16c1.5 0 1.5 1 3 1s1.5-1 3-1 1.5 1 3 1 1.5-1 3-1 1.5 1 3 1 1.5-1 3-1M3 20c1.5 0 1.5 1 3 1s1.5-1 3-1 1.5 1 3 1 1.5-1 3-1 1.5 1 3 1 1.5-1 3-1M6 13V8l6-5 6 5v5' },
+  snow: { label: 'برف و یخبندان', icon: 'M12 2v20M3.3 7l17.4 10M3.3 17l17.4-10M9 3.5l3 2.5 3-2.5M9 20.5l3-2.5 3 2.5M4.3 10.4l2.9-.5-1-2.8M19.7 13.6l-2.9.5 1 2.8' },
+  cold: { label: 'موج سرما / سرمازدگی', icon: 'M10 14.5V5a2 2 0 1 1 4 0v9.5a4 4 0 1 1-4 0zM12 10v7M17 5h4M17 9h3' },
+  fire: { label: 'آتش‌سوزی', icon: 'M12 3c1 3.5 5 5.5 5 10.5a5 5 0 0 1-10 0c0-2.2 1-3.8 2.2-4.8 0 2 1 3.3 2.3 3.3 0-3.2-.9-5.4.5-9z' },
+  quake: { label: 'زلزله', icon: 'M3 21h18M5 21V10l7-6 7 6v11M13 8l-3 4 3 2-3 3 1 4' }
+};
+var ORDER = ['flood', 'snow', 'cold', 'fire', 'quake'];
+
+var PNAME = { 'IR-01': 'آذربایجان شرقی', 'IR-02': 'آذربایجان غربی', 'IR-03': 'اردبیل', 'IR-04': 'اصفهان', 'IR-05': 'ایلام', 'IR-06': 'بوشهر', 'IR-07': 'تهران', 'IR-08': 'چهارمحال و بختیاری', 'IR-10': 'خوزستان', 'IR-11': 'زنجان', 'IR-12': 'سمنان', 'IR-13': 'سیستان و بلوچستان', 'IR-14': 'فارس', 'IR-15': 'کرمان', 'IR-16': 'کردستان', 'IR-17': 'کرمانشاه', 'IR-18': 'کهگیلویه و بویراحمد', 'IR-19': 'گیلان', 'IR-20': 'لرستان', 'IR-21': 'مازندران', 'IR-22': 'مرکزی', 'IR-23': 'هرمزگان', 'IR-24': 'همدان', 'IR-25': 'یزد', 'IR-26': 'قم', 'IR-27': 'گلستان', 'IR-28': 'قزوین', 'IR-29': 'خراسان جنوبی', 'IR-30': 'خراسان رضوی', 'IR-31': 'خراسان شمالی', 'IR-32': 'البرز' };
+
+var NO = 'بدون اعلام خسارت';
+var EVENTS = [
+  { n: 1, hz: 'flood', kind: 'سیلاب', prov: ['IR-23'], place: 'شهرستان میناب', day: 13, impact: 'قطعی تلفن، آب و برق؛ آسیب به واحدهای مسکونی و بخش کشاورزی', sev: true, lat: 27.15, lon: 57.08 },
+  { n: 2, hz: 'snow', kind: 'برف و کولاک', prov: ['IR-30'], place: 'همه شهرستان‌ها (محورهای مواصلاتی)', day: 11, impact: NO },
+  { n: 3, hz: 'snow', kind: 'برف و کولاک', prov: ['IR-08'], place: 'همه شهرستان‌ها (محورهای مواصلاتی)', day: 13, impact: NO },
+  { n: 4, hz: 'snow', kind: 'برف و کولاک', prov: ['IR-04'], place: 'شهرستان‌های اصفهان، نایین و تیران و کرون (محورهای مواصلاتی)', day: 12, dayTo: 15, impact: NO, lat: 32.75, lon: 52.2 },
+  { n: 5, hz: 'cold', kind: 'موج سرما', prov: ['IR-29'], place: 'همه شهرستان‌ها (تعطیلی مدارس)', day: 13, impact: NO },
+  { n: 6, hz: 'cold', kind: 'موج سرما', prov: ['IR-22'], place: 'همه شهرستان‌ها (تعطیلی مدارس)', day: 15, impact: NO },
+  { n: 7, hz: 'cold', kind: 'موج سرما', prov: ['IR-15'], place: 'شهرستان‌های کرمان، جیرفت، بم، انار، بافت، بردسیر، رابر، راور، رفسنجان، زرند، سیرجان، شهربابک و کوهبنان (تعطیلی مدارس)', day: 15, impact: NO },
+  { n: 8, hz: 'cold', kind: 'موج سرما', prov: ['IR-29'], place: 'شهرستان‌های زیرکوه، درمیان، سربیشه و نهبندان (تعطیلی مدارس)', day: 15, impact: NO, lat: 32.4, lon: 59.9 },
+  { n: 9, hz: 'cold', kind: 'موج سرما', prov: ['IR-08'], place: 'همه شهرستان‌ها (تعطیلی مدارس)', day: 15, impact: NO },
+  { n: 10, hz: 'cold', kind: 'موج سرما', prov: ['IR-08', 'IR-02', 'IR-10', 'IR-14', 'IR-24', 'IR-21', 'IR-31', 'IR-22', 'IR-27', 'IR-29', 'IR-32', 'IR-28', 'IR-03', 'IR-12', 'IR-01', 'IR-30', 'IR-11', 'IR-26', 'IR-07', 'IR-15', 'IR-16', 'IR-17'], place: 'تعطیلی کامل در ۲۲ استان', day: 22, impact: NO },
+  { n: 11, hz: 'cold', kind: 'موج سرما', prov: ['IR-03', 'IR-10', 'IR-17', 'IR-01', 'IR-28'], place: 'تعطیلی مدارس در ۵ استان', day: 24, impact: NO },
+  { n: 12, hz: 'cold', kind: 'سرمازدگی', prov: ['IR-21'], place: 'شهرستان بابل (روستای فیلبند)', day: 2, impact: 'جان باختن ۱ نفر', sev: true, lat: 36.05, lon: 52.72 },
+  { n: 13, hz: 'cold', kind: 'سرمازدگی', prov: ['IR-16'], place: 'شهرستان مریوان (ارتفاعات مرزی)', day: 16, impact: 'جان باختن ۱ نفر', sev: true, lat: 35.52, lon: 46.18 },
+  { n: 14, hz: 'cold', kind: 'سرمازدگی', prov: ['IR-23'], place: 'شهرستان‌های حاجی‌آباد، بندرعباس، میناب و رودان', day: 6, impact: 'خسارت به بخش کشاورزی', sev: true, lat: 27.75, lon: 56.55 },
+  { n: 15, hz: 'fire', kind: 'آتش‌سوزی صنعتی و ساختمانی', prov: ['IR-25'], place: 'شهرستان یزد (انفجار و آتش‌سوزی واحد مسکونی)', day: 7, impact: '۳ نفر جان باخته و ۶ نفر مصدوم', sev: true, lat: 31.9, lon: 54.36 },
+  { n: 16, hz: 'fire', kind: 'آتش‌سوزی صنعتی و ساختمانی', prov: ['IR-07'], place: 'شهرستان صفادشت (شهرک صنعتی صفادشت، کارخانه پارچه)', day: 13, impact: '۵ نفر مصدوم', sev: true, lat: 35.68, lon: 50.84 },
+  { n: 17, hz: 'fire', kind: 'آتش‌سوزی صنعتی و ساختمانی', prov: ['IR-21'], place: 'شهرستان بابلسر (انفجار واحد مسکونی)', day: 13, impact: '۱ نفر جان باخته و ۳ نفر مصدوم', sev: true, lat: 36.7, lon: 52.65 },
+  { n: 18, hz: 'fire', kind: 'آتش‌سوزی صنعتی و ساختمانی', prov: ['IR-23'], place: 'شهرستان سیریک (واحد مسکونی)', day: 16, impact: '۱ نفر مصدوم، تخریب ۴ واحد مسکونی', sev: true, lat: 26.52, lon: 57.1 },
+  { n: 19, hz: 'quake', mag: 4.6, prov: ['IR-23'], place: 'شهرستان بندرلنگه (بندر کنگ)', day: 1, impact: NO, lat: 26.6, lon: 54.94 },
+  { n: 20, hz: 'quake', mag: 4.5, prov: ['IR-15'], place: 'شهرستان کرمان', day: 11, impact: NO, lat: 30.28, lon: 57.08 },
+  { n: 21, hz: 'quake', mag: 5.2, prov: ['IR-06'], place: 'شهرستان جم (شهر ریز)', day: 17, impact: NO, lat: 27.9, lon: 52.25 },
+  { n: 22, hz: 'quake', mag: 4.6, prov: ['IR-06'], place: 'شهرستان جم (شهر ریز)', day: 17, impact: NO, lat: 27.9, lon: 52.25 },
+  { n: 23, hz: 'quake', mag: 4.8, prov: ['IR-06'], place: 'شهرستان جم (شهر ریز)', day: 17, impact: NO, lat: 27.9, lon: 52.25 },
+  { n: 24, hz: 'quake', mag: 4.7, prov: ['IR-06'], place: 'شهرستان دشتستان (شهر وحدتیه)', day: 27, impact: NO, lat: 29.48, lon: 51.24 },
+  { n: 25, hz: 'quake', mag: 4.5, prov: ['IR-18'], place: 'شهرستان گچساران (شهر دوگنبدان)', day: 30, impact: NO, lat: 30.36, lon: 50.8 }
+];
+EVENTS.forEach(function (e) { if (e.hz === 'quake') e.kind = 'زلزله با بزرگای ' + fa(e.mag); });
+
+function dateOf(e) { return e.dayTo ? fa(e.day) + ' تا ' + fa(e.dayTo) + ' دی ۱۴۰۳' : fa(e.day) + ' دی ۱۴۰۳'; }
+function provLabel(e) { return e.prov.length > 1 ? fa(e.prov.length) + ' استان' : 'استان ' + PNAME[e.prov[0]]; }
+
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { geo: null, geoErr: false, active: { flood: true, snow: true, cold: true, fire: true, quake: true }, sel: null, prov: null, hover: null, theme: null, labels: false };
+  }
+  componentDidMount() {
+    var self = this;
+    fetch('./assets/79e81dc7b77052d20d842d32a465e00d.json').then(function (r) { return r.json(); }).then(function (g) { self.setState({ geo: g }); }).catch(function () { self.setState({ geoErr: true }); });
+  }
+  renderVals() {
+    var self = this, st = this.state;
+    var theme = st.theme || this.props.theme || 'dark';
+    var active = st.active;
+    var allOn = ORDER.every(function (h) { return active[h]; });
+    var selE = st.sel ? EVENTS.filter(function (e) { return e.n === st.sel; })[0] : null;
+    var visible = EVENTS.filter(function (e) { return active[e.hz]; });
+    var pick = function (n) { return function () { self.setState({ sel: n, prov: null }); }; };
+
+    var count = {};
+    visible.forEach(function (e) { e.prov.forEach(function (p) { count[p] = (count[p] || 0) + 1; }); });
+    var hl = {};
+    if (selE) selE.prov.forEach(function (p) { hl[p] = true; });
+
+    var geo = st.geo, provs = [], plabels = [], marks = [];
+    if (geo) {
+      var cent = {};
+      geo.provinces.forEach(function (p) {
+        cent[p.id] = [p.cx, p.cy];
+        var c = Math.min(count[p.id] || 0, 4);
+        var cls = 'prov lvl-' + c + (hl[p.id] ? ' hl' : '') + (st.prov === p.id ? ' sel' : '') + (st.hover === p.id ? ' hov' : '');
+        provs.push({ d: p.d, cls: cls, vb: '0 0 ' + geo.w + ' ' + geo.h,
+          pick: function () { self.setState({ prov: p.id, sel: null }); },
+          enter: function () { self.setState({ hover: p.id }); },
+          leave: function () { self.setState({ hover: null }); } });
+        plabels.push({ name: p.name, x: (p.cx / geo.w * 100).toFixed(2), y: (p.cy / geo.h * 100).toFixed(2) });
+      });
+      var groups = [];
+      EVENTS.forEach(function (e) {
+        if (e.prov.length > 1) return;
+        if (!active[e.hz] && !(selE && selE.n === e.n)) return;
+        var x, y;
+        if (e.lat != null) { x = (e.lon - geo.lon0) * geo.c * geo.k + geo.pad; y = (geo.lat1 - e.lat) * geo.k + geo.pad; }
+        else { x = cent[e.prov[0]][0]; y = cent[e.prov[0]][1]; }
+        var g = null;
+        for (var i = 0; i < groups.length; i++) { if (Math.hypot(groups[i].x - x, groups[i].y - y) < 24) { g = groups[i]; break; } }
+        if (!g) { g = { x: x, y: y, items: [] }; groups.push(g); }
+        g.items.push(e);
+      });
+      groups.forEach(function (g) {
+        var k = g.items.length;
+        g.items.forEach(function (e, i) {
+          var x = g.x, y = g.y;
+          if (k > 1) { var a = -Math.PI / 2 + i * 2 * Math.PI / k; x += Math.cos(a) * 17; y += Math.sin(a) * 17; }
+          var s = e.hz === 'quake' ? Math.round(24 + (e.mag - 4.5) * 16) : 26;
+          var isSel = selE && selE.n === e.n;
+          marks.push({ x: (x / geo.w * 100).toFixed(2), y: (y / geo.h * 100).toFixed(2), s: s, label: fa(e.n),
+            cls: 'mk hz-' + e.hz + (isSel ? ' is-sel' : (selE ? ' is-dim' : '')),
+            aria: 'رخداد ' + fa(e.n) + ': ' + e.kind + '، ' + provLabel(e) + '، ' + dateOf(e), pick: pick(e.n) });
+        });
+      });
+    }
+
+    var chips = ORDER.map(function (h) {
+      var on = active[h];
+      return { label: HZ[h].label, icon: HZ[h].icon, count: fa(EVENTS.filter(function (e) { return e.hz === h; }).length),
+        cls: 'chip hz-' + h + (on && !allOn ? ' on' : ''), pressed: on && !allOn ? 'true' : 'false',
+        toggle: function () {
+          var next = {};
+          if (allOn) { ORDER.forEach(function (k) { next[k] = k === h; }); }
+          else { ORDER.forEach(function (k) { next[k] = active[k]; }); next[h] = !active[h]; if (!ORDER.some(function (k) { return next[k]; })) ORDER.forEach(function (k) { next[k] = true; }); }
+          self.setState({ active: next });
+        } };
+    });
+
+    var bars = ORDER.map(function (h) {
+      var c = EVENTS.filter(function (e) { return e.hz === h; }).length;
+      return { label: HZ[h].label, count: fa(c) + ' رخداد', w: Math.round(c / 10 * 100), cls: 'hz-' + h };
+    });
+
+    var ev = {};
+    if (selE) {
+      ev = { num: fa(selE.n), kind: selE.kind, hzLabel: HZ[selE.hz].label, icon: HZ[selE.hz].icon, cls: 'hz-' + selE.hz,
+        provTitle: selE.prov.length > 1 ? 'استان‌ها' : 'استان', provNames: selE.prov.map(function (p) { return PNAME[p]; }).join('، '),
+        place: selE.place, date: dateOf(selE), impact: selE.impact, impactCls: selE.sev ? 'meta sev' : 'meta', isMulti: selE.prov.length > 1 };
+    }
+
+    var pv = {};
+    if (st.prov) {
+      var items = visible.filter(function (e) { return e.prov.indexOf(st.prov) >= 0; }).map(function (e) {
+        return { num: fa(e.n), kind: e.kind, date: dateOf(e), impact: e.impact, hzCls: 'hz-' + e.hz, pick: pick(e.n) };
+      });
+      pv = { name: PNAME[st.prov], items: items, none: items.length === 0, countLabel: items.length ? fa(items.length) + ' رخداد در دی‌ماه' : 'بدون رخداد ثبت‌شده' };
+    }
+
+    var days = [];
+    for (var d = 1; d <= 30; d++) {
+      var dots = EVENTS.filter(function (e) { return e.day === d; }).map(function (e) {
+        var isSel = selE && selE.n === e.n;
+        return { label: fa(e.n), cls: 'tl-dot hz-' + e.hz + (isSel ? ' is-sel' : (active[e.hz] ? '' : ' is-dim')),
+          aria: 'رخداد ' + fa(e.n) + ': ' + e.kind + '، ' + provLabel(e) + '، ' + dateOf(e), pick: pick(e.n) };
+      });
+      days.push({ label: (d === 1 || d % 5 === 0) ? fa(d) : '', dots: dots });
+    }
+
+    var sections = ORDER.map(function (h) {
+      var list = EVENTS.filter(function (e) { return e.hz === h; });
+      return { title: HZ[h].label, icon: HZ[h].icon, hzCls: 'hz-' + h, count: fa(list.length) + ' مورد',
+        items: list.map(function (e) {
+          return { num: fa(e.n), kind: e.kind, provLabel: provLabel(e), place: e.place, date: dateOf(e), impact: e.impact,
+            impactCls: e.sev ? 'meta sev' : 'meta', selCls: selE && selE.n === e.n ? 'is-sel' : '', pick: pick(e.n) };
+        }) };
+    });
+
+    var hoverOn = !!(st.hover && geo);
+    var hc = st.hover ? (count[st.hover] || 0) : 0;
+
+    return {
+      themeCls: theme === 'light' ? 't-light' : 't-dark',
+      themeLabel: theme === 'light' ? 'رفتن به حالت تیره' : 'رفتن به حالت روشن',
+      toggleTheme: function () { self.setState({ theme: theme === 'light' ? 'dark' : 'light' }); },
+      loading: !geo, loadingText: st.geoErr ? 'نقشه بارگذاری نشد. صفحه را یک بار تازه کنید.' : 'در حال بارگذاری نقشه…',
+      provs: provs, plabels: plabels, marks: marks, showLabels: st.labels,
+      labelsCls: st.labels ? 'on' : '', labelsPressed: st.labels ? 'true' : 'false',
+      toggleLabels: function () { self.setState({ labels: !st.labels }); },
+      chips: chips, allCls: allOn ? 'on' : '', allPressed: allOn ? 'true' : 'false',
+      showAll: function () { self.setState({ active: { flood: true, snow: true, cold: true, fire: true, quake: true } }); },
+      bars: bars,
+      showIdle: !selE && !st.prov, showEvent: !!selE, showProv: !selE && !!st.prov,
+      ev: ev, pv: pv,
+      clear: function () { self.setState({ sel: null, prov: null }); },
+      hoverOn: hoverOn, hoverName: st.hover ? PNAME[st.hover] : '', hoverCount: hc ? fa(hc) + ' رخداد' : 'بدون رخداد ثبت‌شده',
+      days: days, sections: sections
+    };
+  }
+}
+</script>
+</body>
+</html>
